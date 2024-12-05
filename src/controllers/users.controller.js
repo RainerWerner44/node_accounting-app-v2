@@ -24,7 +24,7 @@ const getUser = (req, res) => {
   const neededUser = usersService.getUserById(+req.params.id);
 
   if (!neededUser) {
-    return res.sendStatus(404);
+    return res.status(404).json({ message: 'User not found' });
   }
 
   res.status(200).json(neededUser);
@@ -52,7 +52,7 @@ const updateUser = (req, res) => {
   const user = usersService.getUserById(+req.params.id);
 
   if (!user) {
-    return res.sendStatus(404);
+    return res.status(404).json({ message: 'User not found' });
   }
 
   const updatedUser = usersService.updateUserById({

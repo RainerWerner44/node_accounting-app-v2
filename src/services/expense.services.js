@@ -42,6 +42,7 @@ const createExpense = ({ userId, spentAt, title, amount, category, note }) => {
   };
 
   expenses.push(expense);
+  nextId++;
 
   return expense;
 };
